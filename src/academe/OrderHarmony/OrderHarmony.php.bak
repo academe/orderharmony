@@ -1,15 +1,5 @@
 <?php
 
-/**
- * TODO: proper documentation.
- * TODO: tests
- * TODO: think about how different API versions would work - perhaps an injected class or factory?
- * TODO: how to get data back as an array rather than nested objects?
- * TODO: error handling (on connection and on result from server).
- * TODO: parsing of return data in a sensible according to the entities being passed around.
- * TODO: a framework for passing data - perhaps an object for each entity, used in both directions, but also versioned.
- */
-
 namespace academe\OrderHarmony;
 
 class OrderHarmony
@@ -172,24 +162,5 @@ class OrderHarmony
         // This is, of course, a POST, so "query" is a bit of a misnomer here.
         $AuthQuery = array_merge($AuthQuery, array('order' => $strOrderData));
         return $this->rest->post($this->GetServerUrl($uri), $AuthQuery, $this->restHeaders, $this->restOptions);
-    }
-
-    // Get all orders for a customer.
-    public function getOrders($customerId)
-    {
-        $uri = $this->getBaseUri('/customer/' . $customerId . '/orders');
-        $AuthQuery = $this->uriAuthQuery($uri);
-        return $this->rest->get($this->GetServerUrl($uri), $AuthQuery, $this->restHeaders, $this->restOptions);
-    }
-
-    // Create a product.
-    public function createProducts(array $productsData)
-    {
-        $strProductsData = json_encode($productsData);
-
-        $uri = $this->getBaseUri('/products/save');
-        $AuthQuery = $this->uriAuthQuery($uri);
-        $AuthQuery = array_merge($AuthQuery, array('products' => $strProductsData));
-        return $this->rest->put($this->GetServerUrl($uri), $AuthQuery, $this->restHeaders, $this->restOptions);
     }
 }
