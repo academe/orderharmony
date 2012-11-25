@@ -11,7 +11,7 @@ This is for API version 1
 
     require 'vendor/autoload.php';
     
-    $OrderHarmony = new academe\OrderHarmony\OrderHarmony();
+    $OrderHarmony = new Academe\OrderHarmony\OrderHarmony();
     $OrderHarmony->setAccount('account_name', 'token_code', 'shared_secret'); 
     
     $rest = new Resty();
