@@ -10,7 +10,7 @@
  * TODO: a framework for passing data - perhaps an object for each entity, used in both directions, but also versioned.
  */
 
-namespace academe\OrderHarmony;
+namespace Academe\OrderHarmony;
 
 class OrderHarmony
 {
