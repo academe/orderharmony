@@ -52,5 +52,7 @@ Notable TODOs
 4. Parsing of return and sent data into appropriate objects: customer, product, 
    variation, address, order, payment, shipment, etc. There is little API documentation 
    on this so it is mostly guesswork at this time.
+5. Add licence headers. I'm looking at something like MIT, so go with that until 
+   you read otherwise.
 
 
